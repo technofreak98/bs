@@ -1,16 +1,16 @@
 {
   "/media/*": {
-    "target": "http://192.168.0.62:8000/",
+    "target": "http://127.0.0.1:5000/",
     "secure": false,
     "changeOrigin": false
   },
   "/api/*": {
-    "target": "http://192.168.0.62:8000/",
+    "target": "http://127.0.0.1:5000/",
     "secure": false,
     "changeOrigin": false
   },
   "/static/*": {
-    "target": "http://192.168.0.62:8000/",
+    "target": "http://127.0.0.1:5000/",
     "secure": false,
     "changeOrigin": false
   }

@@ -11,8 +11,8 @@ export class InventoryComponent implements OnInit {
   
    submitted = false;
    inventoryForm = new FormGroup({
-      productName: new FormControl('', [Validators.required]),
-      salePrice: new FormControl('', [Validators.required])
+      product_name: new FormControl('', [Validators.required]),
+      product_price: new FormControl('', [Validators.required])
     })
   constructor(private inventoryService: InventoryService) { }
 
