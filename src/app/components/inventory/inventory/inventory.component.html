@@ -10,7 +10,7 @@
                     <div class="mb-3 row">
                         <label for="exampleInputEmail1" class="form-label col-sm-2">Product Name</label>
                         <div class="col-sm-6">
-                            <input type="text" [ngClass]="{'is-invalid': submitted && this.inventoryFormData.productName.errors}" class="form-control col-sm-6" formControlName="productName"
+                            <input type="text" [ngClass]="{'is-invalid': submitted && this.inventoryFormData.productName.errors}" class="form-control col-sm-6" formControlName="product_name"
                             id="exampleInputEmail1" placeholder="Enter product name" autocomplete="off">
                             <div *ngIf="submitted && this.inventoryFormData.productName.errors?.required" class="invalid-feedback">
                                 This field is required
@@ -21,7 +21,7 @@
                         <label for="exampleInputPassword1" class="form-label col-sm-2">Sale Price</label>
                         <div class="col-sm-6">
                             <input type="text" [ngClass]="{'is-invalid': submitted && this.inventoryFormData.salePrice.errors}" class="form-control" (keypress)="onlyNumberKey($event)" 
-                            formControlName="salePrice" id="exampleInputPassword1" placeholder="Enter sale price" autocomplete="off">
+                            formControlName="product_price" id="exampleInputPassword1" placeholder="Enter sale price" autocomplete="off">
                             <div *ngIf="submitted && this.inventoryFormData.salePrice.errors?.required" class="invalid-feedback">
                                 This field is required
                             </div>
