@@ -10,18 +10,18 @@
                 </a>
                 <hr>
                 <ul class="nav nav-pills flex-column mt-3">
-                    <li [routerLinkActive]="['active']">
+                    <li>
                         <!-- <a href="/inventory" class="nav-link active text-white p-2">
                             <span class="ms-3">Inventory</span>
                         </a> -->
-                        <a [routerLink]="['/inventory']" class="nav-link text-white text-decoration-none p-2">
+                        <a [routerLink]="['/inventory']" [routerLinkActive]="['active']" class="nav-link text-white text-decoration-none p-2">
                             <span class="ms-3">Inventory</span>
                         </a> 
                     </li>
                 </ul>
                 <ul class="nav nav-pills flex-column mt-3">
-                    <li [routerLinkActive]="['active']">
-                        <a [routerLink]="['/customer']" class="nav-link text-white p-2">
+                    <li>
+                        <a [routerLink]="['/customer']" [routerLinkActive]="['active']" class="nav-link text-white p-2">
                             <span class="ms-3">Customer</span>
                         </a>
                     </li>
