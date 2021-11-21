@@ -1,0 +1,32 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="div col-lg-2">
+            <h1 class="visually-hidden">Sidebars examples</h1>
+            
+            <div class="d-flex flex-column flex-shrink-0 text-white bg-dark" style="height: 100vh;">
+                <a href="/" class="text-white text-decoration-none mb-3 pt-3">
+                    <span class="fs-4 ps-4">Billing App</span>
+                </a>
+                <hr>
+                <ul class="nav nav-pills flex-column mt-3">
+                    <li>
+                        <a href="/inventory" class="nav-link active text-white p-2">
+                           <span class="ms-3">Inventory</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-pills flex-column mt-3">
+                    <li>
+                        <a href="/customer" class="nav-link text-white p-2">
+                            <span class="ms-3">Customer</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
