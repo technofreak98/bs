@@ -1,0 +1,17 @@
+{
+  "/media/*": {
+    "target": "http://192.168.0.62:8000/",
+    "secure": false,
+    "changeOrigin": false
+  },
+  "/api/*": {
+    "target": "http://192.168.0.62:8000/",
+    "secure": false,
+    "changeOrigin": false
+  },
+  "/static/*": {
+    "target": "http://192.168.0.62:8000/",
+    "secure": false,
+    "changeOrigin": false
+  }
+}

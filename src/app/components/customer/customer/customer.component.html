@@ -2,10 +2,10 @@
     <div class="row">
         <div class="col">
             <div class="card">
-                <div class="card-header">
-                    Add Customer
+                <div class="card-header  bg-secondary text-white">
+                   <h5>Add Customer</h5>
                 </div>
-                <div class="card-body">
+                <div class="card-body py-3">
                     <form [formGroup]="customerForm">
                         <div class="mb-3 row">
                             <label for="exampleInputEmail1" class="form-label col-sm-2">Customer Name</label>
@@ -30,10 +30,10 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="exampleInputPassword1" class="form-label col-sm-2">Address</label>
+                            <label for="exampleInputaddress" class="form-label col-sm-2">Address</label>
                             <div class="col-sm-6">
                                 <input type="text" class="form-control" formControlName="address"
-                                    id="exampleInputPassword1" placeholder="Enter address" autocomplete="off">
+                                    id="exampleInputaddress" placeholder="Enter address" autocomplete="off">
                             </div>
                         </div>
                         <div class="mb-3 row">

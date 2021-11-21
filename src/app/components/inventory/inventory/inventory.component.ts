@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { InventoryService } from '../../../services/inventory.service';
 
 @Component({
@@ -8,10 +8,11 @@ import { InventoryService } from '../../../services/inventory.service';
   styleUrls: ['./inventory.component.css']
 })
 export class InventoryComponent implements OnInit {
-
+  
+   submitted = false;
    inventoryForm = new FormGroup({
-      productName: new FormControl(''),
-      salePrice: new FormControl('')
+      productName: new FormControl('', [Validators.required]),
+      salePrice: new FormControl('', [Validators.required])
     })
   constructor(private inventoryService: InventoryService) { }
 
@@ -24,7 +25,24 @@ export class InventoryComponent implements OnInit {
     return !(ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57));
   }
 
+  get inventoryFormData(){
+    return this.inventoryForm.controls;
+  }
+
+  resetForm(){
+    this.submitted = false;
+    this.inventoryForm.reset();
+    this.inventoryForm.patchValue({
+      productName: '',
+      salePrice: ''
+    })
+  }
+
   addInventory(){
+    this.submitted = true
+    if(this.inventoryForm.invalid){
+      return ;
+    }
     // this.inventoryService.addInventory(this.inventoryForm.getRawValue()).subscribe((res: any) => {
     //   console.log(res);
     // })
