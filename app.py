@@ -1,17 +1,26 @@
-from flask import Flask, redirect, url_for, request
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+import os
+
 
 app = Flask(__name__)
+app.config.from_object(os.environ['APP_SETTINGS'])
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
+from models import Product
 
 
-@app.route('/add', methods =['POST'])
-def hello_world():
-    product_name = request.form['product_name']
-    product_price = request.form['product_price']
-    product_object = {
-        "name" : product_name,
-        "price" : product_price
-    }
-    return product_object
+@app.route('/')
+def hello():
+    return "Hello World!"
+
+
+@app.route('/add',methods=['POST'])
+def add_product():
+    return "Hello!"
 
 
 if __name__ == '__main__':
