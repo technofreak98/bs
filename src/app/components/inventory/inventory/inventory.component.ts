@@ -43,10 +43,13 @@ export class InventoryComponent implements OnInit {
     if(this.inventoryForm.invalid){
       return ;
     }
-    // this.inventoryService.addInventory(this.inventoryForm.getRawValue()).subscribe((res: any) => {
-    //   console.log(res);
-    // })
-    console.log(this.inventoryForm.getRawValue());
+    this.inventoryService.addInventory(this.inventoryForm.getRawValue()).subscribe((res: any) => {
+      console.log('success',res);
+      console.log(this.inventoryForm.getRawValue());
+      this.resetForm();
+    }, err => {
+      console.log('error', err);
+    })
   }
 
 }
