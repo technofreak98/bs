@@ -9,6 +9,7 @@ export class InventoryService {
   constructor(private http: HttpClient) { }
 
   addInventory(payload: any){
+    console.log('payload',payload)
     return this.http.post(`/add/`, payload);
   }
 }
