@@ -11,16 +11,22 @@
                         <label for="exampleInputEmail1" class="form-label col-sm-2">Product Name</label>
                         <div class="col-sm-6">
                             <input type="text" class="form-control col-sm-6" formControlName="productName"
-                            id="exampleInputEmail1" aria-describedby="emailHelp">
+                            id="exampleInputEmail1" placeholder="Enter product name" autocomplete="off">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="exampleInputPassword1" class="form-label col-sm-2">Sale Price</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" (keypress)="onlyNumberKey($event)" formControlName="salePrice" id="exampleInputPassword1">
+                            <input type="text" class="form-control" (keypress)="onlyNumberKey($event)" 
+                            formControlName="salePrice" id="exampleInputPassword1" placeholder="Enter sale price" autocomplete="off">
                         </div>
                     </div>
-                    <button type="submit" (click)="addInventory()" class="btn btn-primary">Submit</button>
+                    <div class="mb-3 row">
+                        <label for="submitBtnInventory" class="form-label col-sm-2"></label>
+                        <div class="col-sm-6">
+                            <button type="submit" (click)="addInventory()" id="submitBtnInventory" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
                 </form>
                 </div>
             </div>
