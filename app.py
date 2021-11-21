@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import os
@@ -20,7 +20,24 @@ def hello():
 
 @app.route('/add',methods=['POST'])
 def add_product():
-    return "Hello!"
+    product_name = request.form.get('product_name')
+    product_price = request.form.get('product_price')
+    product_metadata = {
+        'name' : product_name,
+        'price' : product_price
+    }
+    print(product_metadata)
+    try:
+        result = Product(
+            product_name=product_name,
+            product_price=product_price
+        )
+        db.session.add(result)
+        db.session.commit()
+        print('Success')
+    except:
+        print("Unable to add item to database.")
+    return product_metadata
 
 
 if __name__ == '__main__':
