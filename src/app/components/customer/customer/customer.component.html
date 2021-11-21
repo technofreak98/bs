@@ -1,1 +1,52 @@
-<p>customer works!</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    Add Customer
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="customerForm">
+                        <div class="mb-3 row">
+                            <label for="exampleInputEmail1" class="form-label col-sm-2">Customer Name</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control col-sm-6" formControlName="customer_name"
+                                    id="exampleInputEmail1" placeholder="Enter customer name" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="exampleInputPassword1" class="form-label col-sm-2">Phone Number</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" (keypress)="onlyNumberKey($event)"
+                                    formControlName="ph_no" id="exampleInputPassword1"
+                                    placeholder="Enter phone number" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="exampleInputPassword1" class="form-label col-sm-2">Email</label>
+                            <div class="col-sm-6">
+                                <input type="email" class="form-control" formControlName="email"
+                                    id="exampleInputPassword1" placeholder="Enter email" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="exampleInputPassword1" class="form-label col-sm-2">Address</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" formControlName="address"
+                                    id="exampleInputPassword1" placeholder="Enter address" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="submitBtnCustomer" class="form-label col-sm-2"></label>
+                            <div class="col-sm-6">
+                                <button type="submit" (click)="addCustomer()" id="submitBtnCustomer"
+                                    class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
