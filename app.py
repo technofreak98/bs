@@ -35,8 +35,9 @@ def add_product():
         db.session.add(result)
         db.session.commit()
         print('Success')
-    except:
+    except Exception as e:
         print("Unable to add item to database.")
+        print(e)
     return product_metadata
 
 
