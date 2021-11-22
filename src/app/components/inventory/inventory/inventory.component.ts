@@ -8,7 +8,7 @@ import { InventoryService } from '../../../services/inventory.service';
   styleUrls: ['./inventory.component.css']
 })
 export class InventoryComponent implements OnInit {
-  
+
    submitted = false;
    inventoryForm = new FormGroup({
       product_name: new FormControl('', [Validators.required]),
@@ -39,17 +39,17 @@ export class InventoryComponent implements OnInit {
   }
 
   addInventory(){
-    this.submitted = true
-    if(this.inventoryForm.invalid){
+    this.submitted = true;
+    if (this.inventoryForm.invalid){
       return ;
     }
     this.inventoryService.addInventory(this.inventoryForm.getRawValue()).subscribe((res: any) => {
-      console.log('success',res);
+      console.log('success', res);
       console.log(this.inventoryForm.getRawValue());
       this.resetForm();
-    }, err => {
+    }, (err) => {
       console.log('error', err);
-    })
+    });
   }
 
 }
